@@ -1,18 +1,4 @@
-<?php 
 include 'db.php'; 
-
-// Auto-migration: Create columns if they don't exist
-$migrations = [
-    'rm' => "ALTER TABLE leads ADD COLUMN rm VARCHAR(255) AFTER message",
-    'project' => "ALTER TABLE leads ADD COLUMN project VARCHAR(255) AFTER rm"
-];
-
-foreach ($migrations as $column => $sql) {
-    $check = mysqli_query($conn, "SHOW COLUMNS FROM leads LIKE '$column'");
-    if (mysqli_num_rows($check) == 0) {
-        mysqli_query($conn, $sql);
-    }
-}
 
 $msg = "";
 if(isset($_POST['submit'])){
