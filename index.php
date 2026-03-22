@@ -41,3 +41,10 @@ while($row = mysqli_fetch_assoc($result)){
 echo "Version 2 🚀";
 
 ?>
+
+
+<?php
+
+echo "Version 3 🚀";
+
+?>
